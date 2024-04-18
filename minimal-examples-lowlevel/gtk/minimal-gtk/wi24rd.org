@@ -1,0 +1,38 @@
+* 现在的日志
+** 运行
+./bin/lws-minimal-gtk 
+** 输出
+t1_main: started
+[2024/04/18 14:03:41:9469] E: lws_create_context: failed to load evlib_glib
+[2024/04/18 14:03:41:9470] E: lws init failed
+** 弹出窗口，显示一个“hello world"按钮
+** 点击按钮后，终端输出
+Hello World
+
+
+* 之前的日志
+[ 66%] Building C object minimal-examples-lowlevel/gtk/minimal-gtk/CMakeFiles/lws-minimal-gtk.dir/main.c.o
+/home/w/github/libwebsockets/minimal-examples-lowlevel/gtk/minimal-gtk/main.c: In function ‘callback_http’:
+/home/w/github/libwebsockets/minimal-examples-lowlevel/gtk/minimal-gtk/main.c:80:34: error: conversion to ‘int’ from ‘unsigned int’ may change the sign of the result [-Werror=sign-conversion]
+   80 |                         status = lws_http_client_http_response(wsi);
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/w/github/libwebsockets/minimal-examples-lowlevel/gtk/minimal-gtk/main.c: At top level:
+/home/w/github/libwebsockets/minimal-examples-lowlevel/gtk/minimal-gtk/main.c:126:9: error: missing initializer for field ‘id’ of ‘const struct lws_protocols’ [-Werror=missing-field-initializers]
+  126 |         },
+      |         ^
+In file included from /home/w/github/libwebsockets/include/libwebsockets.h:701,
+                 from /home/w/github/libwebsockets/minimal-examples-lowlevel/gtk/minimal-gtk/main.c:2:
+/home/w/github/libwebsockets/include/libwebsockets/lws-protocols-plugins.h:66:22: note: ‘id’ declared here
+   66 |         unsigned int id;
+      |                      ^~
+/home/w/github/libwebsockets/minimal-examples-lowlevel/gtk/minimal-gtk/main.c:127:9: error: missing initializer for field ‘id’ of ‘const struct lws_protocols’ [-Werror=missing-field-initializers]
+  127 |         { NULL, NULL, 0, 0 }
+      |         ^
+/home/w/github/libwebsockets/include/libwebsockets/lws-protocols-plugins.h:66:22: note: ‘id’ declared here
+   66 |         unsigned int id;
+      |                      ^~
+cc1: all warnings being treated as errors
+make[2]: *** [minimal-examples-lowlevel/gtk/minimal-gtk/CMakeFiles/lws-minimal-gtk.dir/build.make:76: minimal-examples-lowlevel/gtk/minimal-gtk/CMakeFiles/lws-minimal-gtk.dir/main.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:4566: minimal-examples-lowlevel/gtk/minimal-gtk/CMakeFiles/lws-minimal-gtk.dir/all] Error 2
+make: *** [Makefile:166: all] Error 2
+
